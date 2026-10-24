@@ -12,6 +12,15 @@ on:
       queries:
         description: "Tavily search queries, one per line as query|domain"
         default: ""
+      cards:
+        description: "Card dumps, one per line: url|css-selector|N"
+        default: ""
+      extract_urls:
+        description: "Space-separated URLs for Tavily extract"
+        default: ""
+      zillow:
+        description: "Set to 1 to try Zillow query variants"
+        default: ""
       full_ldjson:
         description: "Print full ld+json blocks"
         default: ""
@@ -37,7 +46,12 @@ jobs:
           URLS: ${{ inputs.urls }}
           QUERIES: ${{ inputs.queries }}
           FULL_LDJSON: ${{ inputs.full_ldjson }}
+          CARDS: ${{ inputs.cards }}
+          EXTRACT_URLS: ${{ inputs.extract_urls }}
+          ZILLOW: ${{ inputs.zillow }}
         run: |
-          if [ -n "$QUERIES" ]; then python -m scripts.debug_tavily; fi
+          if [ -n "$QUERIES$EXTRACT_URLS" ]; then python -m scripts.debug_tavily; fi
+          if [ -n "$CARDS" ]; then python -m scripts.debug_card; fi
+          if [ -n "$ZILLOW" ]; then python -m scripts.debug_zillow; fi
           if [ -n "$SOURCES" ]; then python -m scripts.debug_fetch $SOURCES; fi
           if [ -n "$URLS" ]; then python -m scripts.debug_html $URLS; fi

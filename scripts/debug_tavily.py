@@ -13,4 +13,12 @@ for line in os.environ.get("QUERIES", "").splitlines():
         print("### FAILED", e); continue
     for r in res:
         print(f"- {r.get('url')}\n  title: {r.get('title')}\n  content: {(r.get('content') or '')[:500]}")
+for u in os.environ.get("EXTRACT_URLS", "").split():
+    print(f"\n### TAVILY EXTRACT {u}")
+    try:
+        out = tavily.extract([u])
+    except Exception as e:
+        print("### FAILED", e); continue
+    for k, v in out.items():
+        print(f"### RESULT {k} chars={len(v or '')}\n{(v or '')[:12000]}\n### END")
 print("### credits:", tavily.credits_used)
