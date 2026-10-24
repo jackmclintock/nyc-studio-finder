@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+data/last_email.html
+data/*.tmp
