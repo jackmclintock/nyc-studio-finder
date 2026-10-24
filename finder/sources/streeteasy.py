@@ -34,7 +34,8 @@ from . import base
 
 NAME = "streeteasy"
 LABEL = "StreetEasy"
-NEEDS_TAVILY = True
+NEEDS_TAVILY = False   # Tavily extract (basic and advanced) returns cards without prices or links; tested 2026-10
+TRY_TAVILY = False     # direct access works intermittently from GitHub runners; blocked runs are reported, not patched with Tavily
 
 log = logging.getLogger(__name__)
 
@@ -496,5 +497,7 @@ def fetch():
         reason = f"direct blocked: {e}"
     except Exception as e:   # timeouts, 5xx after retries, connection resets
         reason = f"direct failed: {type(e).__name__}: {e}"
+    if not TRY_TAVILY:
+        raise http.Blocked(reason + " (intermittent; Tavily cannot read StreetEasy prices, so no credits spent)")
     log.info("streeteasy: %s; trying Tavily", reason)
     return _fetch_tavily(reason)

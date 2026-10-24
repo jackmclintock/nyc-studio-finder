@@ -27,7 +27,7 @@ from . import base
 
 NAME = "cityrealty"
 LABEL = "CityRealty"
-NEEDS_TAVILY = True
+NEEDS_TAVILY = False   # results render client-side (Angular); Tavily advanced extract only sees "Loading Listings"; tested 2026-10
 TAVILY_REFRESH_HOURS = 12  # lower-value source; stretch the Tavily allowance
 
 BASE_URL = "https://www.cityrealty.com"
@@ -208,7 +208,12 @@ def _html_to_md(html):
     return soup.get_text("\n")
 
 
+UNSUPPORTED = True   # flip to False to re-enable the direct/Tavily attempts below
+
+
 def fetch():
+    if UNSUPPORTED:
+        raise Blocked("CityRealty loads listings with JavaScript after the page; no public endpoint found (tested 2026-10)")
     try:
         r = http.get(SEARCH_URL, retries=0)          # one direct try, to notice if it opens up
     except Blocked as e:

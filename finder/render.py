@@ -158,7 +158,7 @@ footer{margin-top:30px;color:var(--muted);font-size:12.5px}
 <details>
   <summary>Source health this run</summary>
   <table id="sources"><thead><tr><th>Source</th><th>Status</th><th>Listings</th><th>Note</th></tr></thead><tbody></tbody></table>
-  <p>Sources marked blocked refuse automated requests. Where a Tavily fallback exists it runs every few hours rather than every hour to stay inside the free credit allowance.</p>
+  <p>Sources marked blocked refused automated requests on this run. StreetEasy and Zillow let some runs through and block others, so their listings stay on the board between successful runs rather than being marked as gone. Apartments.com is read through Tavily every six hours. RentHop and CityRealty cannot be read at all right now.</p>
 </details>
 
 <footer>

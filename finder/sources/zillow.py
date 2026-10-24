@@ -19,7 +19,8 @@ from . import base
 
 NAME = "zillow"
 LABEL = "Zillow / Trulia / HotPads"
-NEEDS_TAVILY = True
+NEEDS_TAVILY = False   # Tavily extract shows addresses only, no prices or links; tested 2026-10
+TRY_TAVILY = False
 
 SITE = "https://www.zillow.com"
 
@@ -259,4 +260,6 @@ def fetch():
     try:
         return _dedupe(_direct())
     except Blocked as e:
+        if not TRY_TAVILY:
+            raise Blocked(f"{e} (intermittent; Tavily cannot read Zillow prices, so no credits spent)")
         return _dedupe(_via_tavily(str(e)))

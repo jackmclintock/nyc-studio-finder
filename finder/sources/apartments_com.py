@@ -17,7 +17,7 @@ from . import base
 NAME = "apartments_com"
 LABEL = "Apartments.com"
 NEEDS_TAVILY = True
-TAVILY_REFRESH_HOURS = 12  # lower-value source; stretch the Tavily allowance
+TAVILY_REFRESH_HOURS = 6   # the only Tavily consumer: 1 credit per refresh, ~120 a month
 
 SITE = "https://www.apartments.com"
 SEARCH_URLS = [
