@@ -107,7 +107,10 @@ AREA_IDS = sorted({a[0] for a in AREAS})
 
 
 def search_url(page=1):
-    """Studios (beds<1) at or under MAX_PRICE in our areas, newest first.
+    """Studios (beds:0) at or under MAX_PRICE in our areas, newest first.
+
+    Tested 2026-10 against the live site: beds:0 returns studios only, while
+    beds<1 returns one-bedrooms (StreetEasy appears to drop the "<").
 
     Filter syntax as seen in StreetEasy's own indexed URLs:
     /for-rent/nyc/status:open|price:-2700|area:104,105,...?sort_by=se_score and
@@ -116,7 +119,7 @@ def search_url(page=1):
     filters = "|".join([
         "status:open",
         f"price:-{config.MAX_PRICE}",
-        "beds<1",
+        "beds:0",
         "area:" + ",".join(map(str, AREA_IDS)),
     ])
     url = f"{SITE}/for-rent/nyc/{quote(filters, safe=':,-')}?sort_by=listed_desc"
