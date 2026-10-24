@@ -9,6 +9,12 @@ on:
       urls:
         description: "Space-separated URLs (or 'streeteasy') for structural HTML analysis"
         default: ""
+      queries:
+        description: "Tavily search queries, one per line as query|domain"
+        default: ""
+      full_ldjson:
+        description: "Print full ld+json blocks"
+        default: ""
 
 permissions:
   contents: read
@@ -29,6 +35,9 @@ jobs:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
           SOURCES: ${{ inputs.sources }}
           URLS: ${{ inputs.urls }}
+          QUERIES: ${{ inputs.queries }}
+          FULL_LDJSON: ${{ inputs.full_ldjson }}
         run: |
+          if [ -n "$QUERIES" ]; then python -m scripts.debug_tavily; fi
           if [ -n "$SOURCES" ]; then python -m scripts.debug_fetch $SOURCES; fi
           if [ -n "$URLS" ]; then python -m scripts.debug_html $URLS; fi

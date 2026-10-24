@@ -2,6 +2,7 @@
 Usage: python -m scripts.debug_html <url|streeteasy> ...
 Prints: status, title, script inventory, ld+json, __NEXT_DATA__ head, context around key tokens,
 and hrefs containing 'rent'. Writes nothing."""
+import os
 import re
 import sys
 from collections import Counter
@@ -37,6 +38,18 @@ def show(url):
     if nm:
         print("### NEXT_DATA head:\n" + nm.group(1)[:CAP])
     print("### token counts:", {t: h.count(t) for t in TOKENS})
+    # StreetEasy: area tree (id/name pairs) and the RSC payload that carries search results
+    for sm in re.finditer(r"<script[^>]*>(.*?)</script>", h, re.S | re.I):
+        body = sm.group(1)
+        if "NYC and NJ" in body and "\\\"short\\\"" in body:
+            pairs = re.findall(r'\\"id\\":\\"(\d+)\\",\\"name\\":\\"([^"\\]+)\\"', body)
+            print("### AREA TREE id/name pairs (%d):" % len(pairs))
+            print("  " + "; ".join(f"{i}={n}" for i, n in pairs[:700]))
+        if "experiments" in body and len(body) > 20000:
+            print("### RSC PAYLOAD (len %d):\n" % len(body) + body[:int(__import__("os").environ.get("RSC_CAP", "70000"))] + "\n### END RSC")
+    if os.environ.get("FULL_LDJSON"):
+        for sm in re.finditer(r"<script[^>]*application/ld\+json[^>]*>(.*?)</script>", h, re.S | re.I):
+            print("### FULL LD+JSON:\n" + sm.group(1) + "\n### END LD")
     for t in ["/rental/", "/building/", "short-term-rental-details", "rental-details", "listing-card", "data-listing", "__APOLLO_STATE__", "window.__"]:
         idxs = [m.start() for m in re.finditer(re.escape(t), h)][:3]
         for i in idxs:
