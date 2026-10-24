@@ -19,6 +19,17 @@ def strip_html(t):
     return re.sub(r"\s+", " ", t)
 
 
+import requests
+_req = requests.Session.request
+def logged_request(self, method, url, *a, **kw):
+    r = _req(self, method, url, *a, **kw)
+    body = kw.get("json")
+    print(f"\n### HTTP {method} {url} -> {r.status_code} bytes={len(r.content)}" + (f" json_body={str(body)[:600]}" if body else ""))
+    if "tavily.com" not in url:
+        print("### BODY HEAD:\n" + r.text[:3500])
+    return r
+requests.Session.request = logged_request
+
 _get = http.get
 def logged_get(url, *a, **kw):
     print(f"\n### DIRECT GET {url}")

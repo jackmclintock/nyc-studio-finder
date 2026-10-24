@@ -6,6 +6,9 @@ on:
       sources:
         description: "Space-separated source names"
         default: "streeteasy zillow renthop apartments_com cityrealty leasebreak"
+      urls:
+        description: "Space-separated URLs (or 'streeteasy') for structural HTML analysis"
+        default: ""
 
 permissions:
   contents: read
@@ -24,4 +27,6 @@ jobs:
       - name: Fetch with full logging
         env:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
-        run: python -m scripts.debug_fetch ${{ inputs.sources }}
+        run: |
+          if [ -n "${{ inputs.sources }}" ]; then python -m scripts.debug_fetch ${{ inputs.sources }}; fi
+          if [ -n "${{ inputs.urls }}" ]; then python -m scripts.debug_html ${{ inputs.urls }}; fi
