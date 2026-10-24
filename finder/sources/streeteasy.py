@@ -285,6 +285,85 @@ def parse_results_text(text, via_tavily=True):
     return out, len(cards)
 
 
+
+# ---------------------------------------------------------------------------
+# Structured route: the results page embeds schema.org JSON-LD with one
+# Apartment/Accommodation entry per card (url, bedrooms, address with the
+# neighbourhood as addressLocality, zip, sqft, images, "Monthly Rent").
+# ---------------------------------------------------------------------------
+LDJSON_RE = re.compile(r"<script[^>]*type=[\"']application/ld\+json[\"'][^>]*>(.*?)</script>", re.S | re.I)
+
+
+def parse_ldjson(html):
+    """Return (listings, n_entries). n_entries counts rental entries seen before filtering."""
+    import json as _json
+    entries = []
+    for m in LDJSON_RE.finditer(html or ""):
+        try:
+            data = _json.loads(m.group(1))
+        except ValueError:
+            continue
+        graph = data.get("@graph") if isinstance(data, dict) else data
+        if isinstance(data, dict) and not graph:
+            graph = [data]
+        for it in graph or []:
+            if isinstance(it, dict) and it.get("@type") in ("Apartment", "Accommodation", "House", "SingleFamilyResidence", "Residence"):
+                entries.append(it)
+    out = []
+    for it in entries:
+        url = it.get("url") or it.get("@id") or ""
+        if "streeteasy.com" not in url:
+            continue
+        m = LINK_RE.search(url)
+        if not m:
+            continue
+        sid, url = _key_and_url(m)
+        rent = None
+        for prop in it.get("additionalProperty") or []:
+            if isinstance(prop, dict) and "rent" in str(prop.get("name", "")).lower():
+                rent = base.parse_price(prop.get("value"))
+        if rent is None:
+            offers = it.get("offers") or {}
+            rent = base.parse_price(offers.get("price") if isinstance(offers, dict) else None)
+        beds = it.get("numberOfBedrooms")
+        try:
+            beds = float(beds) if beds is not None else None
+        except (TypeError, ValueError):
+            beds = None
+        name = it.get("name") or ""
+        if beds not in (None, 0, 0.0) and not STUDIO_RE.search(name) and not JUNIOR_RE.search(name):
+            continue
+        addr = it.get("address") or {}
+        street = addr.get("streetAddress") if isinstance(addr, dict) else None
+        raw = addr.get("addressLocality") if isinstance(addr, dict) else None
+        zipcode = addr.get("postalCode") if isinstance(addr, dict) else None
+        if raw and raw.lower() in ("new york", "manhattan", "brooklyn", "ny"):
+            raw = None
+        size = (it.get("floorSize") or {}).get("value") if isinstance(it.get("floorSize"), dict) else None
+        imgs = it.get("image") or []
+        img = None
+        if imgs:
+            first = imgs[0] if isinstance(imgs, list) else imgs
+            img = first.get("url") if isinstance(first, dict) else first
+            if img and "undefined" in img:
+                img = img.replace("https://undefined/", "https://photos.zillowstatic.com/")
+        baths = it.get("numberOfBathroomsTotal")
+        flags = []
+        if beds not in (None, 0, 0.0):
+            flags.append("alcove-or-junior")
+        l = _make(sid, url, rent, f"Studio at {name}" if name else "Studio", raw, name, street or name, flags, zipcode=zipcode)
+        if l:
+            l.via_tavily = False
+            l.sqft = int(size) if isinstance(size, (int, float)) else l.sqft
+            l.image_url = img
+            try:
+                l.bathrooms = float(baths) if baths is not None else None
+            except (TypeError, ValueError):
+                pass
+            out.append(l)
+    return out, len(entries)
+
+
 def parse_search_results(results):
     """Parse tavily.search() results: [{url, title, content}]."""
     out, n = [], 0
@@ -353,7 +432,9 @@ def _fetch_direct():
         r = http.get(search_url(page), s=s, retries=1)
         if BOT_WALL_RE.search(r.text[:50000]):
             raise http.Blocked(f"{search_url(page)} -> bot wall in 200 response")
-        listings, n = parse_results_text(r.text, via_tavily=False)
+        listings, n = parse_ldjson(r.text)
+        if not n:
+            listings, n = parse_results_text(r.text, via_tavily=False)
         if not n:
             break
         any_cards = True

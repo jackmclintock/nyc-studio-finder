@@ -30,20 +30,26 @@ BOXES = {
 }
 
 
-def _sqs(box, term="New York NY"):
+def _sqs(box, term="New York, NY"):
+    # Tested 2026-10: the short-key form ("fr", "mp", beds max only) ignores the
+    # bedroom filter; this long-key form with min+max beds and a region returns
+    # studios only. Bounds narrow it to lower Manhattan / Williamsburg.
     return {
         "pagination": {},
         "usersSearchTerm": term,
         "mapBounds": box,
+        "mapZoom": 13,
+        "regionSelection": [{"regionId": 6181, "regionType": 6}],   # New York, NY
         "isMapVisible": True,
         "isListVisible": True,
         "filterState": {
-            "fr": {"value": True}, "fsba": {"value": False}, "fsbo": {"value": False},
-            "nc": {"value": False}, "cmsn": {"value": False}, "auc": {"value": False},
-            "fore": {"value": False},
-            "beds": {"max": config.BEDROOMS},
-            "mp": {"max": config.MAX_PRICE},
-            "sort": {"value": "days"},
+            "isForRent": {"value": True}, "isForSaleByAgent": {"value": False},
+            "isForSaleByOwner": {"value": False}, "isNewConstruction": {"value": False},
+            "isComingSoon": {"value": False}, "isAuction": {"value": False},
+            "isForSaleForeclosure": {"value": False},
+            "beds": {"min": config.BEDROOMS, "max": config.BEDROOMS},
+            "monthlyPayment": {"max": config.MAX_PRICE},
+            "sortSelection": {"value": "days"},
         },
     }
 
@@ -101,7 +107,8 @@ def _direct():
                       "Origin": SITE, "Referer": f"{SITE}/new-york-ny/rentals/"})
     out = []
     for i, box in enumerate(BOXES.values()):
-        body = {"searchQueryState": _sqs(box), "wants": {"cat1": ["listResults"]}, "requestId": i + 2}
+        body = {"searchQueryState": _sqs(box), "wants": {"cat1": ["listResults", "mapResults"], "cat2": ["total"]},
+                "requestId": i + 2, "isDebugRequest": False}
         try:
             r = s.put(f"{SITE}/async-create-search-page-state", json=body, timeout=25)
         except requests.RequestException as e:

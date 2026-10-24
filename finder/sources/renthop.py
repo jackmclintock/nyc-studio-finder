@@ -26,7 +26,8 @@ from . import base
 
 NAME = "renthop"
 LABEL = "RentHop"
-NEEDS_TAVILY = True
+NEEDS_TAVILY = False   # Tavily extract returns nothing for RentHop (tested 2026-10); direct try only, no credits spent
+TRY_TAVILY = False
 
 BASE_URL = "https://www.renthop.com"
 # Studios (bedrooms[]=0), max $2,500, NYC.
@@ -206,6 +207,8 @@ def fetch():
     else:
         print(f"[{NAME}] direct request succeeded ({r.status_code}); the site may have opened up")
         return parse(_html_to_md(r.text), via_tavily=False)
+    if not TRY_TAVILY:
+        raise Blocked(f"{blocked}; RentHop also blocks Tavily reads (tested 2026-10)")
     try:
         pages = tavily.extract([TAVILY_URL], depth=TAVILY_DEPTH)
     except tavily.TavilyUnavailable as e:

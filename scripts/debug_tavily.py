@@ -16,7 +16,7 @@ for line in os.environ.get("QUERIES", "").splitlines():
 for u in os.environ.get("EXTRACT_URLS", "").split():
     print(f"\n### TAVILY EXTRACT {u}")
     try:
-        out = tavily.extract([u])
+        out = tavily.extract([u], depth=os.environ.get("EXTRACT_DEPTH", "basic"))
     except Exception as e:
         print("### FAILED", e); continue
     for k, v in out.items():

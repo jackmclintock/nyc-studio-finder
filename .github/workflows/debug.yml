@@ -18,6 +18,9 @@ on:
       extract_urls:
         description: "Space-separated URLs for Tavily extract"
         default: ""
+      extract_depth:
+        description: "Tavily extract depth: basic or advanced"
+        default: "basic"
       zillow:
         description: "Set to 1 to try Zillow query variants"
         default: ""
@@ -48,6 +51,7 @@ jobs:
           FULL_LDJSON: ${{ inputs.full_ldjson }}
           CARDS: ${{ inputs.cards }}
           EXTRACT_URLS: ${{ inputs.extract_urls }}
+          EXTRACT_DEPTH: ${{ inputs.extract_depth }}
           ZILLOW: ${{ inputs.zillow }}
         run: |
           if [ -n "$QUERIES$EXTRACT_URLS" ]; then python -m scripts.debug_tavily; fi
