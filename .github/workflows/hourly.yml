@@ -2,7 +2,7 @@ name: Find studios
 
 on:
   schedule:
-    - cron: "7 * * * *"      # hourly, a few minutes past to dodge the top-of-hour rush
+    - cron: "7,37 * * * *"   # twice an hour: GitHub drops or delays scheduled runs, so this keeps roughly hourly coverage
   workflow_dispatch:
     inputs:
       digest:

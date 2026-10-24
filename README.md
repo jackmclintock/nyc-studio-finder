@@ -45,8 +45,8 @@ time. The first run seeds the history, so nothing is emailed; from the second ru
 listings are highlighted and alerts go out. Tick the digest box on a later manual run if
 you want to see what the digest email looks like straight away.
 
-After that it runs itself every hour. GitHub sometimes delays scheduled runs by a few
-minutes at busy times, which is fine.
+After that it runs itself. The schedule is set for twice an hour because GitHub delays or
+drops some scheduled runs on a best-effort basis, so this keeps roughly hourly coverage.
 
 ## What it searches
 
