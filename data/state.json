@@ -1,5 +1,8 @@
 {
- "alerted_keys": [],
+ "alerted_keys": [
+  "apartments_com:67et8lr",
+  "apartments_com:wj8m71l"
+ ],
  "digested_keys": [
   "apartmentlist:p14088232-0_bed_1.0_bath",
   "apartmentlist:p27512968-202",
@@ -186,7 +189,35 @@
     "zumper": "ok"
    },
    "tavily_credits": 0
+  },
+  {
+   "active": 37,
+   "at": "2026-10-24T18:16:15+00:00",
+   "fetched": 37,
+   "gone": 0,
+   "new": 4,
+   "seconds": 26.9,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "ok",
+    "cityrealty": "ok",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 5
   }
  ],
- "tavily_last_used_at": {}
+ "tavily_last_used_at": {
+  "apartments_com": "2026-10-24T18:15:59+00:00",
+  "zillow": "2026-10-24T18:16:14+00:00"
+ }
 }
