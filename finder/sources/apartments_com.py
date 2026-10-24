@@ -101,54 +101,45 @@ def _direct():
 
 # --- Tavily route ------------------------------------------------------------
 
-def _link_start(text, pos):
-    """If the URL at pos is the target of a markdown link `[...](url)`, return where that link starts."""
-    if not text.startswith("](", pos - 2):
-        return pos
-    depth = 0
-    for i in range(pos - 2, max(-1, pos - 600), -1):
-        c = text[i]
-        if c == "]":
-            depth += 1
-        elif c == "[":
-            depth -= 1
-            if depth == 0:
-                return i - 1 if i and text[i - 1] == "!" else i
-    return pos
-
-
-def _segments(text):
-    firsts, seen = [], set()
-    for m in LISTING_RE.finditer(text):
-        slug, pid = m.group(1), m.group(2)
-        if pid in NOT_IDS or slug in CITY_SLUGS:
-            continue
-        if pid not in seen:
-            seen.add(pid)
-            firsts.append((_link_start(text, m.start()), pid, f"{SITE}/{slug}/{pid}/"))
-    for i, (pos, pid, url) in enumerate(firsts):
-        end = firsts[i + 1][0] if i + 1 < len(firsts) else min(len(text), pos + 1500)
-        yield pid, url, text[pos:end]
+CARD_RE = re.compile(
+    r"\[(?P<name>[^\]\n]{2,120})\n\n(?P<addr>[^\]\n]{5,160})\]\((?P<url>https?://(?:www\.)?apartments\.com/[a-z0-9-]+/[a-z0-9]{6,8}/)\)")
+ROOM_RE = re.compile(r"\bRoom for Rent\b", re.I)
+STUDENT_RE = re.compile(r"\b(FOUND Study|student|intern|dorm)\b", re.I)
 
 
 def _parse_tavily(text):
+    """Tavily returns each card as "[Name\n\nAddress](url)" followed by lines like
+    "Studio", "$1,800" or "$2,080+", "Total Monthly Price", "Apartment for Rent"
+    or "Room for Rent", until the next card link."""
     out = []
-    for pid, url, seg in _segments(text):
-        seg = IMG.sub(' ', seg)
-        link_texts = [m.group(1).strip(" #*") for m in MD_LINK.finditer(seg) if not m.group(0).startswith("!")]
-        plain = MD_LINK.sub(lambda m: "" if m.group(0).startswith("!") else m.group(1), seg)
+    # Unit rows render as "[Studio\n\n$2,400](url)" links; keep only real property
+    # cards (name + postal address) as segment boundaries so unit rows stay with their card.
+    cards = [m for m in CARD_RE.finditer(text) if re.search(r",\s*[A-Z]{2}\s*\d{5}", m.group("addr"))]
+    for i, m in enumerate(cards):
+        name, address, url = m.group("name").strip(), m.group("addr").strip(), m.group("url")
+        seg = text[m.end(): cards[i + 1].start() if i + 1 < len(cards) else m.end() + 1500]
+        seg = IMG.sub(" ", seg)
+        plain = MD_LINK.sub(lambda mm: mm.group(1), seg)
         plain = re.sub(r"https?://\S+", " ", plain)
-        if MULTI_BED.search(plain) and not STUDIO.search(plain):
+        if not STUDIO.search(plain):
             continue
-        m = PRICE.search(plain)
-        if not m:
+        # Price belongs to this card only if it appears before any bed count other than studio.
+        pm = PRICE.search(plain)
+        if not pm:
             continue
-        am = ADDRESS_RE.search(" ".join(link_texts) + "\n" + plain)
-        address = re.sub(r"\s+", " ", am.group(1)).strip(" ,|-") if am else None
-        name = next((t for t in link_texts if t and not re.match(r"^\d", t) and "$" not in t and len(t) < 80), None)
-        if not name:
-            name = url.split("/")[3].removesuffix("-new-york-ny").removesuffix("-brooklyn-ny").replace("-", " ").title()
-        out.append(_make(pid, url, m.group(1), m.group(2), name, address, plain, True))
+        if MULTI_BED.search(plain[: pm.start()]):
+            continue
+        flags = []
+        if ROOM_RE.search(plain):
+            flags.append("room-or-share")
+        if STUDENT_RE.search(name + " " + plain[:200]):
+            flags.append("student-housing")
+        if ", NJ" in address or ", CT" in address:
+            continue
+        l = _make(_id(url), url, pm.group(1), pm.group(2), name, address, plain, True)
+        if l:
+            l.flags = list(dict.fromkeys(l.flags + flags))
+            out.append(l)
     return out
 
 

@@ -27,6 +27,8 @@ jobs:
       - name: Fetch with full logging
         env:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          SOURCES: ${{ inputs.sources }}
+          URLS: ${{ inputs.urls }}
         run: |
-          if [ -n "${{ inputs.sources }}" ]; then python -m scripts.debug_fetch ${{ inputs.sources }}; fi
-          if [ -n "${{ inputs.urls }}" ]; then python -m scripts.debug_html ${{ inputs.urls }}; fi
+          if [ -n "$SOURCES" ]; then python -m scripts.debug_fetch $SOURCES; fi
+          if [ -n "$URLS" ]; then python -m scripts.debug_html $URLS; fi
