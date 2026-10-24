@@ -1,0 +1,27 @@
+name: Debug sources
+
+on:
+  workflow_dispatch:
+    inputs:
+      sources:
+        description: "Space-separated source names"
+        default: "streeteasy zillow renthop apartments_com cityrealty leasebreak"
+
+permissions:
+  contents: read
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Fetch with full logging
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+        run: python -m scripts.debug_fetch ${{ inputs.sources }}
