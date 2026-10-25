@@ -44,7 +44,7 @@
   "streeteasy:unit:56-58-pine-street-building/5e",
   "zillow:69509759"
  ],
- "last_digest_at": "2026-10-25T12:29:47+00:00",
+ "last_digest_at": "2026-10-25T22:00:22+00:00",
  "runs": [
   {
    "active": 33,
@@ -445,6 +445,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 1
+  },
+  {
+   "active": 42,
+   "at": "2026-10-25T22:00:22+00:00",
+   "fetched": 37,
+   "gone": 0,
+   "new": 0,
+   "seconds": 19.6,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
   }
  ],
  "tavily_last_used_at": {
