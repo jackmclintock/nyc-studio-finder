@@ -35,9 +35,16 @@
   "zumper:5069796p",
   "zumper:53519265",
   "zumper:64086747",
-  "zumper:65604913"
+  "zumper:65604913",
+  "apartments_com:67et8lr",
+  "apartments_com:fze1f2r",
+  "apartments_com:gkz6emz",
+  "leasebreak:404643",
+  "leasebreak:408229",
+  "streeteasy:unit:56-58-pine-street-building/5e",
+  "zillow:69509759"
  ],
- "last_digest_at": "2026-10-24T18:03:09+00:00",
+ "last_digest_at": "2026-10-25T12:29:47+00:00",
  "runs": [
   {
    "active": 33,
@@ -363,10 +370,35 @@
     "zumper": "ok"
    },
    "tavily_credits": 0
+  },
+  {
+   "active": 42,
+   "at": "2026-10-25T12:29:47+00:00",
+   "fetched": 42,
+   "gone": 0,
+   "new": 0,
+   "seconds": 22.5,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "ok",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 1
   }
  ],
  "tavily_last_used_at": {
-  "apartments_com": "2026-10-25T01:30:59+00:00",
+  "apartments_com": "2026-10-25T12:29:28+00:00",
   "zillow": "2026-10-24T18:16:14+00:00"
  }
 }
