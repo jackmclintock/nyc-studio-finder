@@ -1,6 +1,7 @@
 {
  "alerted_keys": [
-  "apartments_com:67et8lr"
+  "apartments_com:67et8lr",
+  "apartmentlist:p3496156-0_bed_1.0_bath_622.0_sqft"
  ],
  "digested_keys": [
   "apartmentlist:p14088232-0_bed_1.0_bath",
@@ -42,9 +43,10 @@
   "leasebreak:404643",
   "leasebreak:408229",
   "streeteasy:unit:56-58-pine-street-building/5e",
-  "zillow:69509759"
+  "zillow:69509759",
+  "apartmentlist:p3496156-0_bed_1.0_bath_622.0_sqft"
  ],
- "last_digest_at": "2026-10-25T22:00:22+00:00",
+ "last_digest_at": "2026-10-26T12:57:36+00:00",
  "runs": [
   {
    "active": 33,
@@ -545,10 +547,35 @@
     "zumper": "ok"
    },
    "tavily_credits": 0
+  },
+  {
+   "active": 42,
+   "at": "2026-10-26T12:57:36+00:00",
+   "fetched": 40,
+   "gone": 0,
+   "new": 1,
+   "seconds": 14.4,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "ok",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 1
   }
  ],
  "tavily_last_used_at": {
-  "apartments_com": "2026-10-26T04:34:36+00:00",
+  "apartments_com": "2026-10-26T12:57:25+00:00",
   "zillow": "2026-10-24T18:16:14+00:00"
  }
 }
