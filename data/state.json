@@ -46,9 +46,11 @@
   "zillow:69509759",
   "apartmentlist:p3496156-0_bed_1.0_bath_622.0_sqft",
   "craigslist:7990076409",
-  "craigslist:7990258230"
+  "craigslist:7990258230",
+  "streeteasy:unit:426-west-46-street-new_york/3d",
+  "zillow:244745189"
  ],
- "last_digest_at": "2026-10-27T12:00:44+00:00",
+ "last_digest_at": "2026-10-27T22:00:52+00:00",
  "runs": [
   {
    "active": 33,
@@ -1549,6 +1551,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 1
+  },
+  {
+   "active": 40,
+   "at": "2026-10-27T22:00:52+00:00",
+   "fetched": 33,
+   "gone": 0,
+   "new": 0,
+   "seconds": 15.2,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
   }
  ],
  "tavily_last_used_at": {
