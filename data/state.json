@@ -48,7 +48,7 @@
   "craigslist:7990076409",
   "craigslist:7990258230"
  ],
- "last_digest_at": "2026-10-26T22:00:41+00:00",
+ "last_digest_at": "2026-10-27T12:00:44+00:00",
  "runs": [
   {
    "active": 33,
@@ -1232,6 +1232,31 @@
    "gone": 0,
    "new": 0,
    "seconds": 15.9,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 39,
+   "at": "2026-10-27T12:00:44+00:00",
+   "fetched": 34,
+   "gone": 0,
+   "new": 0,
+   "seconds": 16.1,
    "sources": {
     "apartmentlist": "ok",
     "apartments_com": "skipped",
