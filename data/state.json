@@ -2001,6 +2001,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 0
+  },
+  {
+   "active": 38,
+   "at": "2026-10-28T12:21:48+00:00",
+   "fetched": 23,
+   "gone": 0,
+   "new": 0,
+   "seconds": 17.1,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "blocked",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 1
   }
  ],
  "tavily_last_used_at": {
