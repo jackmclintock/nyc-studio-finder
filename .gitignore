@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 data/last_email.html
 data/*.tmp
+data/renthop.json
+local/last_renthop.html
+local/renthop_local.log

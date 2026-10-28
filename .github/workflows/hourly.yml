@@ -28,6 +28,13 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Pull RentHop data from the home runner
+        run: |
+          if git fetch origin renthop-data 2>/dev/null; then
+            git show origin/renthop-data:data/renthop.json > data/renthop.json && echo "got home runner data"
+          else
+            echo "no home runner data yet"
+          fi
       - name: Run finder
         env:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}

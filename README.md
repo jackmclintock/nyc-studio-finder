@@ -69,7 +69,8 @@ See the "Source health" panel at the bottom of the page for what worked on the l
 | Craigslist, Zumper, Realtor.com, Apartment List, Nooklyn, NYBits, Listings Project, Leasebreak | Direct | Reliable from GitHub's runners. PadMapper is a mirror of Zumper. Leasebreak is furnished sublets, flagged as such. |
 | StreetEasy, Zillow (also covers Trulia and HotPads) | Direct, intermittent | Their bot protection lets some hourly runs through and blocks others. Listings found on a good run stay on the board; a blocked run is reported, not treated as "everything gone". |
 | Apartments.com | Tavily | Read through Tavily every six hours, about 120 credits a month against the free 1,000. |
-| RentHop, CityRealty | Not available | RentHop blocks both direct and Tavily reads. CityRealty loads listings with JavaScript after the page. Both show as blocked on the page so it is honest about coverage. |
+| RentHop | Home runner | RentHop blocks cloud servers, so a small script on a Mac at home fetches it hourly over an ordinary connection and uploads the results. See `local/README.md`. Shows as blocked when the Mac has been asleep for over three hours. |
+| CityRealty | Not available | Loads listings with JavaScript after the page; nothing to read without a browser. Shows as blocked so the page is honest about coverage. |
 | Facebook Marketplace, Localize | Not covered | Facebook needs a login. Localize is a frozen 2020 snapshot. |
 
 ## Running locally

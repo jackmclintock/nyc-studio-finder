@@ -15,12 +15,16 @@ The Tavily path is UNTESTED (no key in the dev environment); the parser is
 written defensively against markdown-ish text: links as [text](url), images
 as ![alt](src), prices as $1,234.
 """
+import json
+import os
 import re
+from datetime import datetime, timezone
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
-from .. import http, neighborhoods, tavily
+from .. import config, http, neighborhoods, tavily
+from ..models import Listing
 from ..http import Blocked
 from . import base
 
@@ -199,7 +203,31 @@ def _html_to_md(html):
     return soup.get_text("\n")
 
 
+HOME_DATA = os.path.join(config.DATA_DIR, "renthop.json")
+HOME_MAX_AGE_HOURS = 3
+
+
+def _from_home_runner():
+    """Listings uploaded by local/renthop_local.py (fetched from a home connection)."""
+    if not os.path.exists(HOME_DATA):
+        return None
+    with open(HOME_DATA) as f:
+        data = json.load(f)
+    fetched = datetime.fromisoformat(data.get("fetched_at"))
+    age_h = (datetime.now(timezone.utc) - fetched).total_seconds() / 3600
+    if age_h > HOME_MAX_AGE_HOURS:
+        raise Blocked(f"home runner data is {age_h:.0f}h old (Mac asleep or runner stopped)")
+    if data.get("status") == "blocked":
+        raise Blocked(f"home runner was blocked: {data.get('note', '')[:120]}")
+    out = [Listing(**{k: v for k, v in d.items() if k != "key"}) for d in data.get("listings", [])]
+    print(f"[{NAME}] {len(out)} listings from home runner, fetched {age_h * 60:.0f} min ago")
+    return out
+
+
 def fetch():
+    home = _from_home_runner()
+    if home is not None:
+        return home
     try:
         r = http.get(SEARCH_URL, retries=0)          # one direct try, to notice if it opens up
     except Blocked as e:
