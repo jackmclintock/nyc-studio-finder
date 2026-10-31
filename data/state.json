@@ -57,7 +57,7 @@
   "streeteasy:unit:72-charles-street-new_york/gr",
   "zillow:446992785"
  ],
- "last_digest_at": "2026-10-30T22:00:44+00:00",
+ "last_digest_at": "2026-10-31T12:00:42+00:00",
  "runs": [
   {
    "active": 33,
@@ -4130,6 +4130,31 @@
     "renthop": "blocked",
     "streeteasy": "blocked",
     "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 40,
+   "at": "2026-10-31T12:00:42+00:00",
+   "fetched": 35,
+   "gone": 0,
+   "new": 0,
+   "seconds": 16.2,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
     "zumper": "ok"
    },
    "tavily_credits": 0
