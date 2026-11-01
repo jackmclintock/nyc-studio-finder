@@ -1,7 +1,10 @@
 {
  "alerted_keys": [
   "apartments_com:67et8lr",
-  "apartmentlist:p3496156-0_bed_1.0_bath_622.0_sqft"
+  "apartmentlist:p3496156-0_bed_1.0_bath_622.0_sqft",
+  "zumper:53519265",
+  "zumper:53519289",
+  "zumper:858568p"
  ],
  "digested_keys": [
   "apartmentlist:p14088232-0_bed_1.0_bath",
@@ -4516,6 +4519,31 @@
    "gone": 0,
    "new": 0,
    "seconds": 16.4,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 47,
+   "at": "2026-11-01T00:22:53+00:00",
+   "fetched": 40,
+   "gone": 0,
+   "new": 6,
+   "seconds": 15.4,
    "sources": {
     "apartmentlist": "ok",
     "apartments_com": "skipped",
