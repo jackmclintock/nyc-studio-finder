@@ -58,9 +58,14 @@
   "craigslist:7981987428",
   "craigslist:7992311430",
   "streeteasy:unit:72-charles-street-new_york/gr",
-  "zillow:446992785"
+  "zillow:446992785",
+  "realtor:3347468874",
+  "zumper:1429448p",
+  "zumper:1852255p",
+  "zumper:53519289",
+  "zumper:858568p"
  ],
- "last_digest_at": "2026-10-31T22:00:42+00:00",
+ "last_digest_at": "2026-11-01T13:00:48+00:00",
  "runs": [
   {
    "active": 33,
@@ -4886,6 +4891,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 1
+  },
+  {
+   "active": 54,
+   "at": "2026-11-01T13:00:48+00:00",
+   "fetched": 49,
+   "gone": 0,
+   "new": 0,
+   "seconds": 20.9,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
   }
  ],
  "tavily_last_used_at": {
