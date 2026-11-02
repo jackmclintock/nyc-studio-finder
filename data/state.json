@@ -65,7 +65,7 @@
   "zumper:53519289",
   "zumper:858568p"
  ],
- "last_digest_at": "2026-11-02T13:00:48+00:00",
+ "last_digest_at": "2026-11-02T23:00:45+00:00",
  "runs": [
   {
    "active": 33,
@@ -5874,6 +5874,31 @@
    "gone": 0,
    "new": 0,
    "seconds": 16.0,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 51,
+   "at": "2026-11-02T23:00:45+00:00",
+   "fetched": 44,
+   "gone": 1,
+   "new": 0,
+   "seconds": 15.5,
    "sources": {
     "apartmentlist": "ok",
     "apartments_com": "skipped",
