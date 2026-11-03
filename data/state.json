@@ -66,9 +66,12 @@
   "zumper:53519289",
   "zumper:858568p",
   "craigslist:7994441688",
-  "streeteasy:unit:103-west-70-street-new_york/3d"
+  "streeteasy:unit:103-west-70-street-new_york/3d",
+  "streeteasy:unit:320-east-11-street-new_york/304",
+  "streeteasy:unit:544-west-50-street-new_york/2re",
+  "zillow:2118563415"
  ],
- "last_digest_at": "2026-11-03T13:00:47+00:00",
+ "last_digest_at": "2026-11-03T23:00:46+00:00",
  "runs": [
   {
    "active": 33,
@@ -6569,6 +6572,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 1
+  },
+  {
+   "active": 50,
+   "at": "2026-11-03T23:00:46+00:00",
+   "fetched": 45,
+   "gone": 0,
+   "new": 0,
+   "seconds": 17.2,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
   }
  ],
  "tavily_last_used_at": {
