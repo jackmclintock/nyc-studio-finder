@@ -69,9 +69,10 @@
   "streeteasy:unit:103-west-70-street-new_york/3d",
   "streeteasy:unit:320-east-11-street-new_york/304",
   "streeteasy:unit:544-west-50-street-new_york/2re",
-  "zillow:2118563415"
+  "zillow:2118563415",
+  "zillow:456677239"
  ],
- "last_digest_at": "2026-11-03T23:00:46+00:00",
+ "last_digest_at": "2026-11-04T13:00:50+00:00",
  "runs": [
   {
    "active": 33,
@@ -6944,6 +6945,31 @@
     "renthop": "blocked",
     "streeteasy": "ok",
     "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 53,
+   "at": "2026-11-04T13:00:50+00:00",
+   "fetched": 41,
+   "gone": 0,
+   "new": 0,
+   "seconds": 15.8,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
     "zumper": "ok"
    },
    "tavily_credits": 0
