@@ -6,7 +6,8 @@
   "zumper:53519289",
   "zumper:858568p",
   "streeteasy:unit:103-west-70-street-new_york/3d",
-  "craigslist:7995194448"
+  "craigslist:7995194448",
+  "craigslist:7995404409"
  ],
  "digested_keys": [
   "apartmentlist:p14088232-0_bed_1.0_bath",
@@ -7234,6 +7235,31 @@
    "gone": 0,
    "new": 0,
    "seconds": 15.5,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 49,
+   "at": "2026-11-05T00:00:45+00:00",
+   "fetched": 38,
+   "gone": 1,
+   "new": 1,
+   "seconds": 16.5,
    "sources": {
     "apartmentlist": "ok",
     "apartments_com": "skipped",
