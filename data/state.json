@@ -78,9 +78,11 @@
   "craigslist:7995194448",
   "craigslist:7995404409",
   "leasebreak:406410",
-  "craigslist:7995975135"
+  "craigslist:7995975135",
+  "streeteasy:unit:324-east-59-street-new_york/4d",
+  "zillow:2101656598"
  ],
- "last_digest_at": "2026-11-06T13:00:46+00:00",
+ "last_digest_at": "2026-11-06T23:00:45+00:00",
  "runs": [
   {
    "active": 33,
@@ -8606,6 +8608,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 1
+  },
+  {
+   "active": 47,
+   "at": "2026-11-06T23:00:45+00:00",
+   "fetched": 38,
+   "gone": 1,
+   "new": 0,
+   "seconds": 14.4,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
   }
  ],
  "tavily_last_used_at": {
