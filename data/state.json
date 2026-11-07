@@ -82,9 +82,11 @@
   "streeteasy:unit:324-east-59-street-new_york/4d",
   "zillow:2101656598",
   "streeteasy:unit:725-9-avenue-new_york/1d",
-  "zillow:2117626236"
+  "zillow:2117626236",
+  "streeteasy:unit:45-essex-street-new_york/18",
+  "zillow:2096785887"
  ],
- "last_digest_at": "2026-11-07T13:00:44+00:00",
+ "last_digest_at": "2026-11-07T23:00:45+00:00",
  "runs": [
   {
    "active": 33,
@@ -9307,6 +9309,31 @@
     "renthop": "blocked",
     "streeteasy": "ok",
     "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 50,
+   "at": "2026-11-07T23:00:45+00:00",
+   "fetched": 37,
+   "gone": 0,
+   "new": 0,
+   "seconds": 14.6,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
     "zumper": "ok"
    },
    "tavily_credits": 0
