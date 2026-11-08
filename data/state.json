@@ -88,7 +88,7 @@
   "zillow:2096785887",
   "craigslist:7997076744"
  ],
- "last_digest_at": "2026-11-08T13:00:50+00:00",
+ "last_digest_at": "2026-11-08T23:00:41+00:00",
  "runs": [
   {
    "active": 33,
@@ -10022,6 +10022,31 @@
    "gone": 0,
    "new": 0,
    "seconds": 13.9,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 50,
+   "at": "2026-11-08T23:00:41+00:00",
+   "fetched": 37,
+   "gone": 0,
+   "new": 0,
+   "seconds": 14.3,
    "sources": {
     "apartmentlist": "ok",
     "apartments_com": "skipped",
