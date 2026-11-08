@@ -85,9 +85,10 @@
   "streeteasy:unit:725-9-avenue-new_york/1d",
   "zillow:2117626236",
   "streeteasy:unit:45-essex-street-new_york/18",
-  "zillow:2096785887"
+  "zillow:2096785887",
+  "craigslist:7997076744"
  ],
- "last_digest_at": "2026-11-07T23:00:45+00:00",
+ "last_digest_at": "2026-11-08T13:00:50+00:00",
  "runs": [
   {
    "active": 33,
@@ -9713,10 +9714,35 @@
     "zumper": "ok"
    },
    "tavily_credits": 0
+  },
+  {
+   "active": 51,
+   "at": "2026-11-08T13:00:50+00:00",
+   "fetched": 51,
+   "gone": 0,
+   "new": 0,
+   "seconds": 19.7,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "ok",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 1
   }
  ],
  "tavily_last_used_at": {
-  "apartments_com": "2026-11-08T07:00:31+00:00",
+  "apartments_com": "2026-11-08T13:00:34+00:00",
   "zillow": "2026-10-24T18:16:14+00:00"
  }
 }
