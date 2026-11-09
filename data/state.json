@@ -90,9 +90,13 @@
   "zillow:2117626236",
   "streeteasy:unit:45-essex-street-new_york/18",
   "zillow:2096785887",
-  "craigslist:7997076744"
+  "craigslist:7997076744",
+  "apartments_com:6a16b7b73cb68b66",
+  "apartments_com:a36a3350c83445e0",
+  "apartments_com:e52efa66aceab52e",
+  "apartments_com:fd98521a81cdae4d"
  ],
- "last_digest_at": "2026-11-09T13:00:43+00:00",
+ "last_digest_at": "2026-11-09T23:00:48+00:00",
  "runs": [
   {
    "active": 33,
@@ -10693,6 +10697,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 1
+  },
+  {
+   "active": 51,
+   "at": "2026-11-09T23:00:48+00:00",
+   "fetched": 42,
+   "gone": 1,
+   "new": 0,
+   "seconds": 17.5,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
   }
  ],
  "tavily_last_used_at": {
