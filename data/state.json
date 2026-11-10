@@ -98,7 +98,7 @@
   "craigslist:7998065073",
   "streeteasy:unit:73-west-71-street-new_york/2a"
  ],
- "last_digest_at": "2026-11-10T13:00:42+00:00",
+ "last_digest_at": "2026-11-10T23:00:42+00:00",
  "runs": [
   {
    "active": 33,
@@ -11374,6 +11374,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 1
+  },
+  {
+   "active": 47,
+   "at": "2026-11-10T23:00:42+00:00",
+   "fetched": 38,
+   "gone": 0,
+   "new": 0,
+   "seconds": 14.9,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
   }
  ],
  "tavily_last_used_at": {
