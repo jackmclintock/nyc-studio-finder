@@ -99,9 +99,11 @@
   "craigslist:7998065073",
   "streeteasy:unit:73-west-71-street-new_york/2a",
   "craigslist:7998687975",
-  "listingsproject:413037"
+  "listingsproject:413037",
+  "streeteasy:unit:5-tudor-city-place-new_york/618",
+  "zillow:244890022"
  ],
- "last_digest_at": "2026-11-11T13:00:46+00:00",
+ "last_digest_at": "2026-11-11T23:00:44+00:00",
  "runs": [
   {
    "active": 33,
@@ -12049,6 +12051,31 @@
     "renthop": "blocked",
     "streeteasy": "blocked",
     "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 43,
+   "at": "2026-11-11T23:00:44+00:00",
+   "fetched": 34,
+   "gone": 1,
+   "new": 2,
+   "seconds": 16.8,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
     "zumper": "ok"
    },
    "tavily_credits": 0
