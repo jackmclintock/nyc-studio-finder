@@ -13,7 +13,8 @@
   "apartments_com:6a16b7b73cb68b66",
   "apartments_com:fd98521a81cdae4d",
   "apartments_com:a36a3350c83445e0",
-  "apartments_com:e52efa66aceab52e"
+  "apartments_com:e52efa66aceab52e",
+  "craigslist:7998687975"
  ],
  "digested_keys": [
   "apartmentlist:p14088232-0_bed_1.0_bath",
@@ -11474,6 +11475,31 @@
     "zumper": "ok"
    },
    "tavily_credits": 1
+  },
+  {
+   "active": 46,
+   "at": "2026-11-11T02:00:43+00:00",
+   "fetched": 32,
+   "gone": 1,
+   "new": 1,
+   "seconds": 14.6,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "blocked",
+    "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
   }
  ],
  "tavily_last_used_at": {
