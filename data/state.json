@@ -101,35 +101,12 @@
   "craigslist:7998687975",
   "listingsproject:413037",
   "streeteasy:unit:5-tudor-city-place-new_york/618",
-  "zillow:244890022"
+  "zillow:244890022",
+  "streeteasy:unit:the-whitby/803a",
+  "zillow:244846630"
  ],
- "last_digest_at": "2026-11-12T13:00:42+00:00",
+ "last_digest_at": "2026-11-12T23:00:48+00:00",
  "runs": [
-  {
-   "active": 33,
-   "at": "2026-10-24T18:10:48+00:00",
-   "fetched": 33,
-   "gone": 0,
-   "new": 0,
-   "seconds": 11.7,
-   "sources": {
-    "apartmentlist": "ok",
-    "apartments_com": "blocked",
-    "cityrealty": "blocked",
-    "craigslist": "ok",
-    "leasebreak": "blocked",
-    "listingsproject": "ok",
-    "localize": "ok",
-    "nooklyn": "ok",
-    "nybits": "ok",
-    "realtor": "ok",
-    "renthop": "blocked",
-    "streeteasy": "blocked",
-    "zillow": "blocked",
-    "zumper": "ok"
-   },
-   "tavily_credits": 0
-  },
   {
    "active": 37,
    "at": "2026-10-24T18:16:15+00:00",
@@ -12604,10 +12581,35 @@
     "zumper": "ok"
    },
    "tavily_credits": 0
+  },
+  {
+   "active": 43,
+   "at": "2026-11-12T23:00:48+00:00",
+   "fetched": 43,
+   "gone": 0,
+   "new": 0,
+   "seconds": 19.8,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "ok",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
+    "zumper": "ok"
+   },
+   "tavily_credits": 1
   }
  ],
  "tavily_last_used_at": {
-  "apartments_com": "2026-11-12T16:00:33+00:00",
+  "apartments_com": "2026-11-12T23:00:36+00:00",
   "zillow": "2026-10-24T18:16:14+00:00"
  }
 }
