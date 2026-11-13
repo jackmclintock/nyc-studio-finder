@@ -109,31 +109,6 @@
  "runs": [
   {
    "active": 40,
-   "at": "2026-10-24T21:14:03+00:00",
-   "fetched": 33,
-   "gone": 2,
-   "new": 0,
-   "seconds": 16.1,
-   "sources": {
-    "apartmentlist": "ok",
-    "apartments_com": "skipped",
-    "cityrealty": "blocked",
-    "craigslist": "ok",
-    "leasebreak": "ok",
-    "listingsproject": "ok",
-    "localize": "ok",
-    "nooklyn": "ok",
-    "nybits": "ok",
-    "realtor": "ok",
-    "renthop": "blocked",
-    "streeteasy": "blocked",
-    "zillow": "blocked",
-    "zumper": "ok"
-   },
-   "tavily_credits": 0
-  },
-  {
-   "active": 40,
    "at": "2026-10-24T21:30:32+00:00",
    "fetched": 35,
    "gone": 0,
@@ -12603,6 +12578,31 @@
     "renthop": "blocked",
     "streeteasy": "blocked",
     "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 41,
+   "at": "2026-11-13T02:00:44+00:00",
+   "fetched": 32,
+   "gone": 1,
+   "new": 0,
+   "seconds": 15.9,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
     "zumper": "ok"
    },
    "tavily_credits": 0
