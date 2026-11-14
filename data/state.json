@@ -14,7 +14,9 @@
   "apartments_com:fd98521a81cdae4d",
   "apartments_com:a36a3350c83445e0",
   "apartments_com:e52efa66aceab52e",
-  "craigslist:7998687975"
+  "craigslist:7998687975",
+  "streeteasy:unit:538-east-14-street-new_york/10",
+  "zillow:466625475"
  ],
  "digested_keys": [
   "apartmentlist:p14088232-0_bed_1.0_bath",
@@ -107,31 +109,6 @@
  ],
  "last_digest_at": "2026-11-14T13:00:43+00:00",
  "runs": [
-  {
-   "active": 40,
-   "at": "2026-10-27T16:02:24+00:00",
-   "fetched": 35,
-   "gone": 1,
-   "new": 0,
-   "seconds": 16.4,
-   "sources": {
-    "apartmentlist": "ok",
-    "apartments_com": "skipped",
-    "cityrealty": "blocked",
-    "craigslist": "ok",
-    "leasebreak": "ok",
-    "listingsproject": "ok",
-    "localize": "ok",
-    "nooklyn": "ok",
-    "nybits": "ok",
-    "realtor": "ok",
-    "renthop": "blocked",
-    "streeteasy": "ok",
-    "zillow": "ok",
-    "zumper": "ok"
-   },
-   "tavily_credits": 0
-  },
   {
    "active": 40,
    "at": "2026-10-27T17:00:49+00:00",
@@ -12603,6 +12580,31 @@
     "renthop": "blocked",
     "streeteasy": "blocked",
     "zillow": "blocked",
+    "zumper": "ok"
+   },
+   "tavily_credits": 0
+  },
+  {
+   "active": 43,
+   "at": "2026-11-14T16:00:40+00:00",
+   "fetched": 34,
+   "gone": 0,
+   "new": 2,
+   "seconds": 14.4,
+   "sources": {
+    "apartmentlist": "ok",
+    "apartments_com": "skipped",
+    "cityrealty": "blocked",
+    "craigslist": "ok",
+    "leasebreak": "ok",
+    "listingsproject": "ok",
+    "localize": "ok",
+    "nooklyn": "ok",
+    "nybits": "ok",
+    "realtor": "ok",
+    "renthop": "blocked",
+    "streeteasy": "ok",
+    "zillow": "ok",
     "zumper": "ok"
    },
    "tavily_credits": 0
